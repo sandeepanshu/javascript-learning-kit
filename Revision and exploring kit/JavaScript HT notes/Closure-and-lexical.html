@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure aur chai</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <!-- A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. -->
+  <script>
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+    // Lexical Scoping
+    // function outer() {
+    //   let username = "hitesh";
+    //   console.log("OUTER", secret);
+    //   function inner() {
+    //     let secret = "my123";
+    //     console.log("inner", username);
+    //   }
+    //   function innerTwo() {
+    //     console.log("innerTwo", username);
+    //     console.log(secret);
+    //   }
+    //   inner();
+    //   innerTwo();
+    // }
+    // outer();
+    // console.log("TOO OUTER", username);
+
+    // closure
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName; // Agar function return karte hai to kewal function return nhi hota uska lexical scope bhi return hota hai
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+
+  <!-- Practical explanation -->
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = `orange`;
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = `green`;
+    // };
+    //  ab 500 button de rahe hai same kaam karo
+    function clickHandler(color) {
+      document.body.style.backgroundColor = `${color}`;
+      // function return kar raha hu
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>

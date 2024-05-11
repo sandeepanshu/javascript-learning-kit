@@ -1,0 +1,76 @@
+Program 1. Write a program to find the HCF or GCD of two integers.
+let hcf_value;
+const firstNumber = 16;
+const secondNumber = 8;
+
+// looping from numberOne to numberTwo
+for (let i = 1; i <= firstNumber && i <= secondNumber; i++) {
+  // Check factor of both integers
+  if (firstNumber % i == 0 && secondNumber % i == 0) {
+    hcf_value = i;
+  }
+}
+console.log(hcf_value);
+
+program 2. Create a program to reverse a string.
+function reverseString(stringValue) {
+  let updatedString = "";
+  for (let iterator = stringValue.length - 1; iterator >= 0; iterator--) {
+    updatedString += stringValue[iterator];
+  }
+  return updatedString;
+}
+const inputString = "Coding is Fun";
+
+const output = reverseString(inputString);
+console.log(output);
+
+Program 3. Create a program to get sum of all digits of a number.
+function generateSumOfDigit() {
+  var output = 0;
+  while (numberPassed != 0) {
+    output = numberPassed % 10;
+    numberPassed = parseInt(numberPassed / 10);
+  }
+  return output;
+}
+
+// Driver Code
+var value = 687;
+console.log(generateSumOfDigit(value));
+
+// Program 4. Find if a given number is an Armstrong number or not.
+let outputValue = 0;
+let inputValue = 153;
+
+// create a temprary variable
+let tempraryValue = inputValue;
+while (tempraryValue > 0) {
+  // finding one's digit
+  let remainderValue = tempraryValue % 10;
+  outputValue += remainderValue * remainderValue * remainderValue;
+  // removing last digit from the number
+  tempraryValue = parseInt(tempraryValue / 10); // convert float into integer
+}
+
+// check the condition
+if (outputValue == inputValue) {
+  console.log("armstrong");
+} else {
+  console.log("Not armstrong");
+}
+
+// 5. print all the prime number up to given number value.
+var numberCount = 10;
+
+for (var prime_iterator = 2; prime_iterator <= numberCount; primeIterator++) {
+  var isPrime = true;
+  for (var divident = 2; divident <= Math.sqrt(prime_iterator); divident++) {
+    // nested loop
+    isPrime = false;
+    break;
+  }
+}
+if (isPrime) {
+  document.write(prime_iterator + " ");
+}
