@@ -1,7 +1,6 @@
 # javascript-learning-kit
 
-## 9 Important chapter
-- JavaScript in the Browser: DOM and Events Fundamentals
+## 8 Important chapter
 - How JavaScript works behind the scene
 - Data Structures and modern operations and strings
 - Working on Function
